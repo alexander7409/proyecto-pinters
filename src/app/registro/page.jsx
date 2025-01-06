@@ -1,10 +1,28 @@
 "use client"
+import { auth } from "@/firebase/config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react"
 
 
 export default function Registro() {
 
     const [showModal, setShowModal] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const registrarUsuarioEmail = async (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                alert(`Usuario registrado: ${user.email}`)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(`Error: ${errorMessage}`);
+            });
+    }
 
 
     return (
@@ -33,14 +51,20 @@ export default function Registro() {
                             <h1 className="font-bold text-2xl">Bienvenido a Pinterest</h1>
                             <p>Encuentra nuevas ideas para probar </p>
                         </div>
+
                         <p>Correo</p>
-                        <input type="text" placeholder="Correo" className="w-full rounded-xl text-gray-600 border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-300" />
+                        <input type="text" placeholder="Correo" className="w-full rounded-xl text-gray-600 border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-300" value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
+
                         <p>Contraseña</p>
-                        <input type="text" placeholder="Contraseña" className="w-full rounded-xl text-gray-600 border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-300" />
+                        <input type="password" placeholder="Contraseña" className="w-full rounded-xl text-gray-600 border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-300" value={password}
+                            onChange={(e) => setPassword(e.target.value)} />
+
                         <p>Fecha de nacimiento <span className="inline-flex items-center justify-center w-4 h-4 bg-gray-500 text-white rounded-full font-bold mb-2">!</span></p>
                         <input type="text" placeholder="dd/mm/aaaa" className="w-full rounded-xl text-gray-600 border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-300" />
+
                         <div className=" flex justify-center mt-3">
-                            <button className="bg-red-500 text-center text-white rounded-full w-2/3 h-10 px-4 py-1">Continuar</button>
+                            <button onClick={() => registrarUsuarioEmail(email, password)} className="bg-red-500 text-center text-white rounded-full w-2/3 h-10 px-4 py-1">Continuar</button>
                         </div>
                         <div className="flex justify-center mb-3">
                             <p className="text-center text-xs font-bold mb-0 mt-3">O</p>
