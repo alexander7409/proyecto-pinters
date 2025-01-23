@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.fondo-chica {
+  background-image: url("https://s.pinimg.com/webapp/shop-de8ddf10.png" ) ;
+  background-repeat: round;
+}

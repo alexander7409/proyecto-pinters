@@ -72,7 +72,7 @@ export default function ModalInicio({ setMostrarModalInicio }) {
                     <p className="text-center text-xs font-bold mb-0 mt-3">O</p>
                 </div>
 
-                <button onClick={iniciarSesionGoogle} className="w-64 border border-gray-400 py-3 ml-16 rounded-full text-center hover:bg-gray-100">Iniciar sesion con Google</button>
+                <button onClick={iniciarSesionGoogle} className="w-64 border border-gray-400 py-3 ml-16 rounded-full text-center hover:bg-gray-100">Iniciar sesión con Google</button>
 
                 <div className="flex justify-center text-center items-center flex-col gap-3 mt-3">
                     <p className="text-slate-400 font-serif">Sin continuas, aceptas los <span className="text-black">Términos del servicio</span>  de <br />Pinteret y confirmas que has leido nuestra <br /> <span className="text-black text-center"> Politica de privacidad.</span> <br /> <span className="text-black">Aviso de recopilacion de datos.</span></p>
