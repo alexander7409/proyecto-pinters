@@ -7,7 +7,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 
-export default function ModalInicio({ setMostrarModal }) {
+
+export default function ModalInicio({ setMostrarModalInicio }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter()
@@ -43,7 +44,7 @@ export default function ModalInicio({ setMostrarModal }) {
             <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 relative max-h-[100vh]">
                 {/* Botón para cerrar el modal */}
                 <button
-                    onClick={() => setMostrarModal(false)} // Cierra el modal al hacer clic
+                    onClick={() => setMostrarModalInicio(false)} // Cierra el modal al hacer clic
                     className="absolute top-4 right-4  text-black text-xl rounded-full  hover:bg-gray-100 px-2 py-1 max-w-3xl"
                 >
                     ✖
@@ -85,11 +86,6 @@ export default function ModalInicio({ setMostrarModal }) {
 
             </div>
         </div>
-        
-        
-                
-        
-        
         
     );
 }

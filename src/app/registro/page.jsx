@@ -4,26 +4,13 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react"
 
 
+
 export default function Registro() {
 
     const [showModal, setShowModal] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-
-    const registrarUsuarioEmail = async (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                alert(`Usuario registrado: ${user.email}`)
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(`Error: ${errorMessage}`);
-            });
-    }
-
+    
 
     return (
 

@@ -1,7 +1,16 @@
+"use client"
+
 import Link from "next/link";
+import { useState } from "react";
+import ModalRegistro from "./ModalRegistro";
+import ModalInicio from "./ModalInicio";
 
 
 export default function NavBar() {
+
+    const [mostrarModalInicio, setMostrarModalInicio] = useState(false)
+    const [mostrarModal, setMostrarModal] = useState(false)
+
     return (
         <nav className=" flex items-center justify-between top-0  w-full bg-white fixed px-6 z-50 h-24 ">
             <Link href={'/'} className="flex items-center text-red-700">
@@ -22,8 +31,9 @@ export default function NavBar() {
                 <input className=" bg-transparent outline-none w-full cursor-text" type="text" placeholder="Encuentra ideas sobre cenas fáciles, moda, etc." />
             </div>
             <div className="flex items-center gap-2 ">
-                <Link href={'/login'} className="bg-red-500 text-center  rounded-full sm:w-40 px-4 py-2 text-white  hover:bg-red-600 transition duration-200 cursor-pointer">Iniciar Sesiòn</Link>
-                <Link href={'/registro'}><button className="bg-gray-200 rounded-full sm:w-40 px-4 py-2 hover:bg-gray-300 transsition duration-200 cursor-pointer">Registrase</button></Link>
+                <button  onClick={()=>setMostrarModalInicio(!mostrarModalInicio)} className="bg-red-500 text-center  rounded-full sm:w-40 px-4 py-2 text-white  hover:bg-red-600 transition duration-200 cursor-pointer">Iniciar Sesiòn</button>
+                <button onClick={()=>setMostrarModal(!mostrarModal)} className="bg-gray-200 rounded-full sm:w-40 px-4 py-2 hover:bg-gray-300 transsition duration-200 cursor-pointer">Registrase</button>
+                
                 <div className="p-2 rounded-full hover:bg-gray-300 transition duration-200 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3.0" stroke="currentColor" className="size-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -32,7 +42,14 @@ export default function NavBar() {
 
             </div>
 
-
+            {
+                mostrarModal && <ModalRegistro setMostrarModal={setMostrarModal}/>  
+                
+            }
+            {
+                mostrarModalInicio && <ModalInicio setMostrarModalInicio={setMostrarModalInicio}/>
+            }
         </nav>
-    )
+
+);
 }

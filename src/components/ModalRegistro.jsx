@@ -1,30 +1,37 @@
 "use client"
-import { auth } from "@/firebase/config";  
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { useState } from "react";
+import { auth } from "@/firebase/config";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, } from "firebase/auth";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import useUserStore from "@/store/userStore";
 
 
-export default function ModalInicio({ setMostrarModal }) {
+export default function ModalRegistro({ setMostrarModal }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter()
+    const router = useRouter();
+    const { setUser } = useUserStore();    
 
-    const iniciarSesion = async () => {
-        try {
-            const result = await signInWithEmailAndPassword(auth, email, password);
-            console.log(result);
-            alert("¡Éxito! Puedes ingresar.");
-            router.push('/');
-        } catch (error) {
-            alert(error.message);
-        }
-    };
     
+//funcion de registro con email y contraseña
+    const registrarUsuarioEmail = async () => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                alert(`Usuario registrado: ${user.email}`)
+                router.push('/')
+                setUser(true)
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                alert(`Error: ${errorMessage}`);
+            });
 
-    const iniciarSesionGoogle = async () => {
+    };
+
+//funcion de registro con Google
+    const registrarseGoogle = async () => {
         const provider = new GoogleAuthProvider();
         try {
             const result = await signInWithPopup(auth, provider);
@@ -36,9 +43,9 @@ export default function ModalInicio({ setMostrarModal }) {
             alert(`Error al autenticar con Google: ${error.message}`);
         }
     };
+    
 
-    return(
-        
+    return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 relative max-h-[100vh]">
                 {/* Botón para cerrar el modal */}
@@ -65,17 +72,17 @@ export default function ModalInicio({ setMostrarModal }) {
                     onChange={(e) => setPassword(e.target.value)} />
 
                 <div className=" flex justify-center mt-3">
-                    <button onClick={iniciarSesion} className="bg-red-500 text-center text-white rounded-full w-2/3 h-10 px-4 py-1">Iniciar sesion</button>
+                    <button onClick={() => registrarUsuarioEmail()} className="bg-red-500 text-center text-white rounded-full w-2/3 h-10 px-4 py-1">Continuar</button>
                 </div>
                 <div className="flex justify-center mb-3">
                     <p className="text-center text-xs font-bold mb-0 mt-3">O</p>
                 </div>
 
-                <button onClick={iniciarSesionGoogle} className="w-64 border border-gray-400 py-3 ml-16 rounded-full text-center hover:bg-gray-100">Iniciar sesion con Google</button>
+                <button onClick={registrarseGoogle} className="w-64 border border-gray-400 py-3 ml-16 rounded-full text-center hover:bg-gray-100">Iniciar sesion con Google</button>
 
                 <div className="flex justify-center text-center items-center flex-col gap-3 mt-3">
                     <p className="text-slate-400 font-serif">Sin continuas, aceptas los <span className="text-black">Términos del servicio</span>  de <br />Pinteret y confirmas que has leido nuestra <br /> <span className="text-black text-center"> Politica de privacidad.</span> <br /> <span className="text-black">Aviso de recopilacion de datos.</span></p>
-                    <p>¿Aun no estas en pinterest? Registrate</p>
+                    <p>¿Ya eres mientro? Inicia secion</p>
                 </div>
 
                 <div className="bg-gray-200 w-full rounded-b-md mt-2">
@@ -85,11 +92,5 @@ export default function ModalInicio({ setMostrarModal }) {
 
             </div>
         </div>
-        
-        
-                
-        
-        
-        
     );
 }
