@@ -101,7 +101,7 @@ export default function Home() {
 
         <div className="bg-[#DAFFF6] w-full h-screen flex justify-center items-center text-[#006B6C] pl-10">
           {/*left side*/}
-          <div className="flex flex-col justify-center items-center  ">
+          <div className="flex flex-col justify-center items-center  ml-52">
             <h1 className="text-6xl mt-6 font-bold text-center w-[534px] h-[160px]">
               Guarda las ideas
               <br />
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           {/*right side*/}
-          <div className="relative w-[70%] h-full overflow-hidden flex justify-center items-start">
+          <div className="relative w-[70%] h-full overflow-hidden flex justify-center items-start ml-14">
             <div className="my-auto mx-auto w-full">
             <Image
               width={1000}
