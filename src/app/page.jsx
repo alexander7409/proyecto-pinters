@@ -14,39 +14,90 @@ export default function Home() {
       <div>
         <div className="h-screen">
           <Slider />
+          <div className="flex ">
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/236x/63/48/02/634802cc7cb164d5799162dc55b42659.jpg'}
+              alt=""
+            />
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/736x/90/7c/25/907c25eb6a23b401dc81c92a7f004626.jpg'}
+              alt=""
+            />
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/236x/68/b1/81/68b1811a9ba8646ea05e40fa6c22257a.jpg'}
+              alt=""
+            />
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/236x/dc/61/00/dc610038d2a2b429a3219ccf52195ca6.jpg'}
+              alt=""
+            />
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/236x/df/e4/a3/dfe4a3c85817b5410b83cc7d59f69b0e.jpg'}
+              alt=""
+            />
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/236x/24/6e/58/246e58df3165b9f8c863463b5d99162d.jpg'}
+              alt=""
+            />
+            <Image
+              width={1000}
+              className="w-[200px] h-[600px]"
+              height={1000}
+              src={'https://i.pinimg.com/236x/3d/54/f2/3d54f2798cc2af1dfe5a5de0a1b7edc5.jpg'}
+              alt=""
+            />
+          </div>
         </div>
  
         <div className="bg-[#FFFD92] w-full h-screen flex-col relative">
           <p className="mt-2 text-center">Así es como funciona</p>
  
  
-          <div className="md:flex sm:block overflow-hidden relative h-full">
+          <div className="md:flex sm:block relative h-full -my-1">
             {/*left side*/}
-            <div className="relative md:w-[50%] sm:w-[100%] h-full overflow-hidden ml-8 my-[15%]">
+            <div className="relative md:w-[50%] sm:w-[100%] h-full  ml-8 my-[5%] ">
               <Image
                 width={1000}
-                className="w-[298px] h-[456px] z-40 absolute top-14 left-[35%]"
+                className="w-[298px] h-[456px] z-40 absolute top-14 left-[35%] object-contain"
                 height={1000}
                 src={'https://s.pinimg.com/webapp/center-2d76a691.png'}
                 alt=""
               />
               <Image
                 width={1000}
-                className="w-[204px] h-[285px] left-[10%] top-20 z-30 absolute"
+                className="w-[204px] h-[285px] left-[10%] top-20 z-30 absolute object-contain"
                 height={1000}
                 src={'https://s.pinimg.com/webapp/left-ccce7532.png'}
                 alt=""
               />
               <Image
                 width={1000}
-                className="w-[178px] h-[218px] right-[12%] top-0 z-30 absolute"
+                className="w-[178px] h-[218px] right-[12%] top-0 z-30 absolute object-contain"
                 height={1000}
                 src={'https://s.pinimg.com/webapp/topRight-6902088a.png'}
                 alt=""
               />
               <Image
                 width={1000}
-                className="w-[164px] h-[258px] right-[12%] top-96 z-30 absolute"
+                className="w-[164px] h-[258px] right-[12%] top-72 z-30 absolute object-contain"
                 height={1000}
                 src={'https://s.pinimg.com/webapp/right-2bd1edfc.png'}
                 alt=""
@@ -99,9 +150,9 @@ export default function Home() {
           </div>
         </div>
  
-        <div className="bg-[#DAFFF6] w-full h-screen flex justify-center items-center text-[#006B6C] pl-10">
+        <div className="md:flex sm:block bg-[#DAFFF6] w-full h-screen flex justify-center items-center text-[#006B6C] pl-10">
           {/*left side*/}
-          <div className="flex flex-col justify-center items-center  ">
+          <div className="relative sm:w-[50%] w-[100%] flex flex-col justify-center items-center  ">
             <h1 className="text-6xl mt-6 font-bold text-center w-[534px] h-[160px]">
               Guarda las ideas
               <br />
@@ -118,7 +169,7 @@ export default function Home() {
           </div>
  
           {/*right side*/}
-          <div className="relative w-[70%] h-full overflow-hidden flex flex-col justify-center items-center">
+          <div className="relative w-[70%] h-full  sm:visible  overflow-hidden hidden sm:flex flex-col justify-center items-center">
             <div className="my-auto mx-auto text-center w-auto">
               <div className=" fondo-sofa w-[400px] h-[363px]">
                 <p className="font-bold ml-5 text-3xl text-white text-left px-4 py-2">
@@ -160,10 +211,10 @@ export default function Home() {
         </div>
         <div className="bg-[#fff2EB] w-full h-screen flex justify-center items-center ">
           {/*left side*/}
-          <div className="fondo-chica w-[50%] h-[100%] ">
+          <div className="fondo-chica w-[50%] h-[100%] hidden sm:flex sm:w-[50%]"> 
           </div>
           {/*right side*/}
-          <div className="flex flex-col justify-center items-center w-[50%] h-[100%] ml-auto ">
+          <div className="flex flex-col justify-center items-center w-[100%] sm:w-[50%] h-[100%] ml-auto ">
             <h1 className=" text-[#C31952] text-6xl mt-8 font-bold text-center w-[534px] h-[160px]">Míralo, <br />fabrícalo, <br />pruébalo, <br />hazlo</h1>
             <p className="text-[#C31952] mt-20">lo mejor de Pinterest es descubrir <br />cosas e ideas nuevas de personas de <br />todo el mundo.</p>
             <div className="bg-[#ED0000] rounded-full flex justify-center flex-col items-center w-[98px] h-[48px] text-white ml-[30px] hover:bg-[#B60000] transition duration-200 cursor-crosshair">
