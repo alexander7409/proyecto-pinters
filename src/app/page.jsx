@@ -2,11 +2,11 @@
 import Slider from "@/components/Slider";
 import useUserStore from "@/store/userStore";
 import Image from "next/image";
-
+ 
 export default function Home() {
   const { user } = useUserStore();
-
-
+ 
+ 
   return (
     user ? (
       <h1>Hay usuario</h1>
@@ -15,14 +15,14 @@ export default function Home() {
         <div className="h-screen">
           <Slider />
         </div>
-
+ 
         <div className="bg-[#FFFD92] w-full h-screen flex-col relative">
           <p className="mt-2 text-center">Así es como funciona</p>
-
-
-          <div className="flex overflow-hidden relative h-full">
+ 
+ 
+          <div className="md:flex sm:block overflow-hidden relative h-full">
             {/*left side*/}
-            <div className="relative w-[50%] h-full overflow-hidden ml-8 my-8">
+            <div className="relative md:w-[50%] sm:w-[100%] h-full overflow-hidden ml-8 my-[15%]">
               <Image
                 width={1000}
                 className="w-[298px] h-[456px] z-40 absolute top-14 left-[35%]"
@@ -46,14 +46,14 @@ export default function Home() {
               />
               <Image
                 width={1000}
-                className="w-[164px] h-[258px] right-[12%] bottom-20 z-20 absolute"
+                className="w-[164px] h-[258px] right-[12%] top-96 z-30 absolute"
                 height={1000}
                 src={'https://s.pinimg.com/webapp/right-2bd1edfc.png'}
                 alt=""
               />
-
-              <div className="absolute inset-0 flex justify-center items-center z-40 ml-5">
-                <div className="bg-white rounded-full shadow-md p-4 flex items-center w-[316px] h-[100px]">
+ 
+              <div className="absolute inset-0 flex justify-center items-center ml-5 top-0 z-40">
+                <div className="bg-white absolute top-64 z-40 rounded-full shadow-md p-4 flex items-center w-[316px] h-[100px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -98,10 +98,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+ 
         <div className="bg-[#DAFFF6] w-full h-screen flex justify-center items-center text-[#006B6C] pl-10">
           {/*left side*/}
-          <div className="flex flex-col justify-center items-center  ml-52">
+          <div className="flex flex-col justify-center items-center  ">
             <h1 className="text-6xl mt-6 font-bold text-center w-[534px] h-[160px]">
               Guarda las ideas
               <br />
@@ -116,51 +116,46 @@ export default function Home() {
               <button>Explorar</button>
             </div>
           </div>
-
+ 
           {/*right side*/}
-          <div className="relative w-[70%] h-full overflow-hidden flex justify-center items-start ml-14">
-            <div className="my-auto mx-auto w-full">
-            <Image
-              width={1000}
-              className="w-[400px] h-[363px] top-20 right-0"
-              height={1000}
-              src={'https://s.pinimg.com/webapp/future-home-vibes-adb19e98.png'}
-              alt=""
-            />
-            <p className="absolute top-44 left-16 font-bold text-3xl text-white text-left px-4 py-2">
-              Helechos en tu
-              <br />
-              futuro hogar
-              <br />
-              que dan buen
-              <br />
-              rollo
-            </p>
-            <div className="absolute top-96 left-12 flex space-x-4">
-              <Image
-                width={300}
-                height={300}
-                className="w-[90px] h-[130px] rounded-full border-2 border-white"
-                src={"https://s.pinimg.com/webapp/future-home1-b8bc36e8.png"}
-                alt=""
-              />
-              <Image
-                width={300}
-                height={300}
-                className="w-[90px] h-[130px] rounded-full border-2 border-white"
-                src={"https://s.pinimg.com/webapp/future-home2-31c812cc.png"}
-                alt=""
-              />
-              <Image
-                width={300}
-                height={300}
-                className="w-[90px] h-[130px] rounded-full border-2 border-white"
-                src={"https://s.pinimg.com/webapp/future-home3-037e8d49.png"}
-                alt=""
-              />
+          <div className="relative w-[70%] h-full overflow-hidden flex flex-col justify-center items-center">
+            <div className="my-auto mx-auto text-center w-auto">
+              <div className=" fondo-sofa w-[400px] h-[363px]">
+                <p className="font-bold ml-5 text-3xl text-white text-left px-4 py-2">
+                  Helechos en tu
+                  <br />
+                  futuro hogar
+                  <br />
+                  que dan buen
+                  <br />
+                  rollo
+                </p>
+                <div className="relative ml-5 bottom-0 flex space-x-4">
+                  <Image
+                      width={300}
+                      height={300}
+                      className="w-[90px] h-[130px] rounded-full border-2 border-white"
+                      src={"https://s.pinimg.com/webapp/future-home1-b8bc36e8.png"}
+                      alt=""
+                  />
+                  <Image
+                      width={300}
+                      height={300}
+                      className="w-[90px] h-[130px] rounded-full border-2 border-white"
+                      src={"https://s.pinimg.com/webapp/future-home2-31c812cc.png"}
+                      alt=""
+                  />
+                  <Image
+                      width={300}
+                      height={300}
+                      className="w-[90px] h-[130px] rounded-full border-2 border-white"
+                      src={"https://s.pinimg.com/webapp/future-home3-037e8d49.png"}
+                      alt=""
+                  />
+                </div>
+              </div>
             </div>
-            </div>
-           
+ 
           </div>
         </div>
         <div className="bg-[#fff2EB] w-full h-screen flex justify-center items-center ">
@@ -175,7 +170,7 @@ export default function Home() {
               <button>Explorar</button>
             </div>
           </div>
-
+ 
         </div>
       </div>
     )

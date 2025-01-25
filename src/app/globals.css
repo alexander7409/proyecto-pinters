@@ -7,20 +7,34 @@
   --foreground: #171717;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+ 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
-
+ 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
+ 
 .fondo-chica {
   background-image: url("https://s.pinimg.com/webapp/shop-de8ddf10.png" ) ;
+  background-repeat: round;
+}
+ 
+.fondo-sofa {
+  background-image: url("https://s.pinimg.com/webapp/future-home-vibes-adb19e98.png" ) ;
   background-repeat: round;
 }
