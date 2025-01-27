@@ -14,52 +14,53 @@ export default function Home() {
       <div>
         <div className="h-screen">
           <Slider />
-          <div className="flex ">
+          {/*full screen - slider-height - header-height*/}
+          <div className="flex items-end h-[calc(100vh-400px)]">
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[90%]"
               height={1000}
               src={'https://i.pinimg.com/236x/63/48/02/634802cc7cb164d5799162dc55b42659.jpg'}
               alt=""
             />
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[80%]"
               height={1000}
               src={'https://i.pinimg.com/736x/90/7c/25/907c25eb6a23b401dc81c92a7f004626.jpg'}
               alt=""
             />
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[70%]"
               height={1000}
               src={'https://i.pinimg.com/236x/68/b1/81/68b1811a9ba8646ea05e40fa6c22257a.jpg'}
               alt=""
             />
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[60%]"
               height={1000}
               src={'https://i.pinimg.com/236x/dc/61/00/dc610038d2a2b429a3219ccf52195ca6.jpg'}
               alt=""
             />
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[70%]"
               height={1000}
               src={'https://i.pinimg.com/236x/df/e4/a3/dfe4a3c85817b5410b83cc7d59f69b0e.jpg'}
               alt=""
             />
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[80%]"
               height={1000}
               src={'https://i.pinimg.com/236x/24/6e/58/246e58df3165b9f8c863463b5d99162d.jpg'}
               alt=""
             />
             <Image
               width={1000}
-              className="w-[200px] h-[600px]"
+              className="w-1/7 h-[90%]"
               height={1000}
               src={'https://i.pinimg.com/236x/3d/54/f2/3d54f2798cc2af1dfe5a5de0a1b7edc5.jpg'}
               alt=""
@@ -211,7 +212,7 @@ export default function Home() {
         </div>
         <div className="bg-[#fff2EB] w-full h-screen flex justify-center items-center ">
           {/*left side*/}
-          <div className="fondo-chica w-[50%] h-[100%] hidden sm:flex sm:w-[50%]"> 
+          <div className="fondo-chica w-[50%] h-[100%] hidden sm:flex sm:w-[50%]">
           </div>
           {/*right side*/}
           <div className="flex flex-col justify-center items-center w-[100%] sm:w-[50%] h-[100%] ml-auto ">

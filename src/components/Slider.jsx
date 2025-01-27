@@ -23,7 +23,7 @@ const Slider = () => {
     }, [textos.length]);
 
     return (
-        <div className="text-center text-[4rem]">
+        <div className="text-center text-[4rem] h-[200px]">
             <p>Encuentra la próxima</p>
             <p className="font-medium" style={{ color: textos[contador].color }}>{textos[contador].valor}</p>
             <div className="flex justify-center gap-3">
