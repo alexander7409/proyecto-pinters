@@ -1,15 +1,29 @@
 "use client"
 import Slider from "@/components/Slider";
 import useUserStore from "@/store/userStore";
+import useSearchStore from '@/store/searchStore';
 import Image from "next/image";
+import {useEffect, useState} from "react";
+import Pins from "@/components/Pins";
+import Saved from '@/components/Saved';
  
 export default function Home() {
+  const [showSaved, ] = useState(false);
+  const initializeUser = useUserStore((state) => state.initializeUser);
   const { user } = useUserStore();
+  const { saved } = useSearchStore();
+ 
+ 
+  useEffect(() => {
+    initializeUser();
+  }, [initializeUser]);
  
  
   return (
     user ? (
-      <h1>Hay usuario</h1>
+        <div>
+          {saved ? <Saved /> : <Pins />}
+        </div>
     ) : (
       <div>
         <div className="h-screen">
