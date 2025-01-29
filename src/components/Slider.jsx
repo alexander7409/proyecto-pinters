@@ -66,49 +66,49 @@ const Slider = () => {
             <div className="flex items-end gap-2 h-[calc(100vh-200px)]">
                 <Image
                     width={1000}
-                    className="w-1/7 h-[90%] rounded-lg"
+                    className="w-1/7 h-[90%] rounded-lg animate-slide-up"
                     height={1000}
                     src={ textos[contador].imagen1 }
                     alt="imagen#1"
                 />
                 <Image
                     width={1000}
-                    className="w-1/7 h-[80%] rounded-lg"
+                    className="w-1/7 h-[80%] rounded-lg animate-slide-up"
                     height={1000}
                     src={textos[contador].imagen2}
                     alt="imagen#2"
                 />
                 <Image
                     width={1000}
-                    className="w-1/7 h-[70%] rounded-lg"
+                    className="w-1/7 h-[70%] rounded-lg animate-slide-up"
                     height={1000}
                     src={textos[contador].imagen3}
                     alt="imagen#3"
                 />
                 <Image
                     width={1000}
-                    className="w-1/7 h-[60%] rounded-lg"
+                    className="w-1/7 h-[60%] rounded-lg animate-slide-up"
                     height={1000}
                     src={textos[contador].imagen4}
                     alt="imagen#4"
                 />
                 <Image
                     width={1000}
-                    className="w-1/7 h-[70%] rounded-lg"
+                    className="w-1/7 h-[70%] rounded-lg animate-slide-up"
                     height={1000}
                     src={textos[contador].imagen5}
                     alt="imagen#5"
                 />
                 <Image
                     width={1000}
-                    className="w-1/7 h-[80%] rounded-lg"
+                    className="w-1/7 h-[80%] rounded-lg animate-slide-up"
                     height={1000}
                     src={textos[contador].imagen6}
                     alt="imagen#6"
                 />
                 <Image
                     width={1000}
-                    className="w-1/7 h-[90%] rounded-lg"
+                    className="w-1/7 h-[90%] rounded-lg animate-slide-up"
                     height={1000}
                     src={textos[contador].imagen7}
                     alt="imagen#7"
