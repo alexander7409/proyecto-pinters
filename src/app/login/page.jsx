@@ -1,5 +1,5 @@
 "use client"
-import { auth } from "@/firebase/config";  
+import { auth } from "@/firebase/config";
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -22,7 +22,7 @@ export default function ModalInicio({ setMostrarModal }) {
             alert(error.message);
         }
     };
-    
+
 
     const iniciarSesionGoogle = async () => {
         const provider = new GoogleAuthProvider();
@@ -37,9 +37,9 @@ export default function ModalInicio({ setMostrarModal }) {
         }
     };
 
-    return(
-        
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    return (
+
+        <div className="fixed inset-0 flex justify-center items-center z-50">
             <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 relative max-h-[100vh]">
                 {/* Botón para cerrar el modal */}
                 <button
@@ -85,11 +85,11 @@ export default function ModalInicio({ setMostrarModal }) {
 
             </div>
         </div>
-        
-        
-                
-        
-        
-        
+
+
+
+
+
+
     );
 }

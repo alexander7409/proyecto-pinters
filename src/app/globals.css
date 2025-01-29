@@ -27,3 +27,7 @@ body {
   background-image: url("https://s.pinimg.com/webapp/future-home-vibes-adb19e98.png" ) ;
   background-repeat: round;
 }
+
+.modal1 {
+  background: rgba(0, 0, 0, 0.75);
+}

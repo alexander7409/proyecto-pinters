@@ -44,7 +44,7 @@ export default function ModalInicio({ setMostrarModalInicio }) {
  
     return(
  
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="modal1 {background: rgba(0, 0, 0, 0.75);} fixed inset-0 flex justify-center items- center z-50">
             <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-8 relative max-h-[100vh]">
                 {/* Botón para cerrar el modal */}
                 <button
