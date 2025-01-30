@@ -5,7 +5,7 @@ import { db } from '@/firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 import useUserStore from '@/store/userStore';
  
-export default function Saved() {
+export default function Guardados() {
     const [savedPhotos, setSavedPhotos] = useState([]);
     const user = useUserStore((state) => state.user);
  
@@ -38,3 +38,4 @@ export default function Saved() {
         </div>
     );
 }
+ 

@@ -44,9 +44,9 @@ export default function NavBar() {
  
                 <span className="font-bold text-lg mr-6">Pinterest</span>
                 <div className="flex items-center text-black gap-6">
-                    <span onClick={() => handleSavedClick(false)} className="cursor-pointer hover:text-black">Hoy</span>
-                    <span onClick={() => handleSavedClick(false)} className="cursor-pointer hover:text-black">Explorar</span>
-                    <span id="link-guardados" onClick={() => handleSavedClick(true)} className="cursor-pointer hover:text-black">Guardados</span>
+                    <span onClick={() => handleSavedClick('inicio')} className="cursor-pointer hover:text-black">Explorar</span>
+                    {user ? <span onClick={() => handleSavedClick('subir')} className="cursor-pointer hover:text-black">Subir</span>: null }
+                    {user ? <span id="link-guardados" onClick={() => handleSavedClick('guardados')} className="cursor-pointer hover:text-black">Guardados</span> : null }
                 </div>
             </Link>
  
@@ -89,11 +89,11 @@ export default function NavBar() {
             </div>
  
             {
-                mostrarModal && <ModalRegistro setMostrarModal={setMostrarModal}/>
+                mostrarModal && !user && <ModalRegistro setMostrarModal={setMostrarModal}/>
  
             }
             {
-                mostrarModalInicio && <ModalInicio setMostrarModalInicio={setMostrarModalInicio}/>
+                mostrarModalInicio && !user && <ModalInicio setMostrarModalInicio={setMostrarModalInicio}/>
             }
         </nav>
  

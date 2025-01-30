@@ -83,8 +83,10 @@ export default function Pins() {
                                 className="absolute top-2 right-2 bg-white p-2 rounded-full cursor-pointer"
                                 onClick={() => handlePinClick(photo.urls.small)}
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-red-500">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-1.8 0-3.25 1.45-3.25 3.25 0 1.8 1.45 3.25 3.25 3.25s3.25-1.45 3.25-3.25c0-1.8-1.45-3.25-3.25-3.25zm0 6.5c-1.8 0-3.25 1.45-3.25 3.25v6.5c0 1.8 1.45 3.25 3.25 3.25s3.25-1.45 3.25-3.25v-6.5c0-1.8-1.45-3.25-3.25-3.25z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"/>
                                 </svg>
                             </div>
                         )}

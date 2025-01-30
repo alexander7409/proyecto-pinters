@@ -5,10 +5,10 @@ import useSearchStore from '@/store/searchStore';
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import Pins from "@/components/Pins";
-import Saved from '@/components/Saved';
+import Guardados from '@/components/Guardados';
+import SubirFotos from "@/app/subir/SubirFotos";
  
 export default function Home() {
-  const [showSaved, ] = useState(false);
   const initializeUser = useUserStore((state) => state.initializeUser);
   const { user } = useUserStore();
   const { saved } = useSearchStore();
@@ -22,7 +22,9 @@ export default function Home() {
   return (
     user ? (
         <div>
-          {saved ? <Saved /> : <Pins />}
+          {saved === 'inicio' ? <Pins />:null}
+          {saved === 'subir' ? <SubirFotos />:null}
+          {saved === 'guardados' ? <Guardados />:null}
         </div>
     ) : (
       <div>
