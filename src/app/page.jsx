@@ -6,7 +6,7 @@ import Image from "next/image";
 import {useEffect, useState} from "react";
 import Pins from "@/components/Pins";
 import Guardados from '@/components/Guardados';
-import SubirFotos from "@/app/subir/SubirFotos";
+import SubirFotos from "@/components/SubirFotos";
  
 export default function Home() {
   const initializeUser = useUserStore((state) => state.initializeUser);
